@@ -74,7 +74,7 @@
         <a href="#patients">Patients</a>
         <a href="#expect">What To Expect</a>
         <a href="#about">About</a>
-        <a href="#appointment">Call About An Appointment</a>
+        <a href="#appointment">Book Appointment</a>
         <a href="#contact">Contact</a>
         <a class="nav-call" href="tel:+12282247741">Call Now | 228-224-7741</a>
       </div>
@@ -99,12 +99,12 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#appointment" class="btn btn-primary">Call About An Appointment</a>
+          <a href="#appointment" class="btn btn-primary">Book Appointment</a>
           <a href="tel:+12282247741" class="btn btn-secondary">Call Clinic</a>
         </div>
 
         <div class="hero-proof">
-          <span>Call about appointment availability</span>
+          <span>Same-day appointment requests</span>
           <span>DOT, sports, employment, and TB testing services</span>
           <span>Care for infants, children, adults, and seniors</span>
         </div>
@@ -313,7 +313,7 @@
         <div class="process-card" data-reveal>
           <span>1</span>
           <h3>Book Or Request</h3>
-          <p>Call the clinic to discuss services and appointment availability.</p>
+          <p>Choose the service you need and submit a simple appointment request.</p>
         </div>
 
         <div class="process-card" data-reveal>
@@ -366,7 +366,7 @@
 
           <div>
             <strong>3. Convenient Scheduling</strong>
-            <span>A direct phone contact to help clarify your next step.</span>
+            <span>Simple appointment requests designed to reduce delays and confusion.</span>
           </div>
 
           <div>
@@ -406,7 +406,7 @@
       </div>
 
       <div class="automation-list">
-        <span>Call-Based Scheduling</span>
+        <span>Appointment Request Routing</span>
         <span>Missed-Call Text-Back Ready</span>
         <span>Service-Based Follow-Up Ready</span>
         <span>Review Request Workflow Ready</span>
@@ -417,6 +417,71 @@
 <!-- =========================================================
 TESTIMONIAL — CINEMATIC GOLD VERSION
 ========================================================== -->
+<section class="testimonial-section cinematic-testimonial">
+  <div class="testimonial-bg" aria-hidden="true"></div>
+  <div class="testimonial-overlay" aria-hidden="true"></div>
+
+  <div class="container testimonial-inner" data-reveal>
+    <div class="testimonial-kicker">
+      <span></span>
+      <p>Essence Coastal Clinic</p>
+      <span></span>
+    </div>
+
+    <div class="testimonial-panel">
+      <div class="testimonial-glow"></div>
+
+      <p class="testimonial-label">Patient Experience</p>
+
+      <h2>Patients Feel Cared For Here</h2>
+
+      <div class="testimonial-stars" aria-label="Five star patient experience">
+        ★ ★ ★ ★ ★
+      </div>
+
+      <blockquote>
+        “From the moment we walked in, the staff made us feel comfortable and cared for. The clinic was clean, professional, and the appointment process was quick and easy.”
+      </blockquote>
+
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">
+          <img src="assets/img/sarah-m.png" alt="Local patient testimonial">
+        </div>
+
+        <div>
+          <strong>Sarah M.</strong>
+          <span>Local Patient</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-trust-row">
+      <div>
+        <span>♡</span>
+        <strong>Compassionate Care</strong>
+        <p>You’re in kind hands</p>
+      </div>
+
+      <div>
+        <span>◷</span>
+        <strong>Quick Appointments</strong>
+        <p>Care when time matters</p>
+      </div>
+
+      <div>
+        <span>👥</span>
+        <strong>Patient First</strong>
+        <p>Families, workers, and seniors</p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <strong>Trusted Local Clinic</strong>
+        <p>Right here in Gulfport</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- =========================================================
   CONTACT / APPOINTMENT
@@ -466,14 +531,72 @@ TESTIMONIAL — CINEMATIC GOLD VERSION
 
       <div class="appointment-card" id="appointment" data-reveal>
         <div class="form-header">
-          <p class="eyebrow">Plan Your Visit</p>
-          <h3>Call About An Appointment</h3>
+          <p class="eyebrow">Book Your Visit</p>
+          <h3>Request An Appointment</h3>
           <p>
-            Please call the clinic directly to ask about appointment availability.
+            Please complete the form below. Do not submit sensitive medical information through this form.
           </p>
         </div>
 
-        <div class="static-contact-note" role="note"><p>Online appointment requests are temporarily unavailable. Please call the clinic to ask about availability. Do not send medical information through this website or ordinary email.</p><a class="btn btn-dark" href="tel:+12282247741">Call 228-224-7741</a><p>For emergencies, call 911 or visit the nearest emergency facility.</p></div>
+        <form class="clinic-form" id="clinicForm" data-leadspark-ready="true">
+          <input type="hidden" name="source" value="Essence Coastal Clinic Website" />
+          <input type="hidden" name="pageVersion" value="Golden Luxury Landing Page" />
+
+          <div class="form-row">
+            <label>
+              First Name
+              <input type="text" name="firstName" autocomplete="given-name" required />
+            </label>
+
+            <label>
+              Last Name
+              <input type="text" name="lastName" autocomplete="family-name" required />
+            </label>
+          </div>
+
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+
+          <label>
+            Service Needed
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>Acute Illness & Testing</option>
+              <option>DOT Physical</option>
+              <option>Sports / Employment Physical</option>
+              <option>TB Skin Testing</option>
+              <option>General Appointment</option>
+            </select>
+          </label>
+
+          <label>
+            Preferred Contact Method
+            <select name="preferredContact">
+              <option value="">Select preference</option>
+              <option>Phone Call</option>
+              <option>Text Message</option>
+              <option>Email</option>
+            </select>
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Please do not include sensitive medical details."></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-dark">Submit Appointment Request</button>
+
+          <p class="form-note">
+            A team member will follow up to help with scheduling. For emergencies, call 911 or visit the nearest emergency facility.
+          </p>
+        </form>
       </div>
 
     </div>
@@ -495,7 +618,7 @@ TESTIMONIAL — CINEMATIC GOLD VERSION
       </p>
 
       <div class="hero-actions">
-        <a href="#appointment" class="btn btn-primary">Call About An Appointment</a>
+        <a href="#appointment" class="btn btn-primary">Book Appointment</a>
         <a href="tel:+12282247741" class="btn btn-secondary">Call 228-224-7741</a>
       </div>
     </div>
@@ -517,7 +640,7 @@ TESTIMONIAL — CINEMATIC GOLD VERSION
         <a href="#services">Services</a>
         <a href="#patients">Patients</a>
         <a href="#expect">What To Expect</a>
-        <a href="#appointment">Call About An Appointment</a>
+        <a href="#appointment">Book Appointment</a>
         <a href="#contact">Contact</a>
       </div>
 
@@ -529,10 +652,13 @@ TESTIMONIAL — CINEMATIC GOLD VERSION
       </div>
 
       <div>
-        <h4>Clinic Updates</h4>
-        <p>Questions about clinic updates? Please call us.</p>
+        <h4>Stay Updated</h4>
+        <p>Sign up for clinic updates and wellness reminders.</p>
 
-        <p class="static-contact-note">For clinic updates, call <a href="tel:+12282247741">228-224-7741</a>. Online signup is unavailable while this site is being updated.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email Address" />
+          <button type="submit">Sign Up</button>
+        </form>
       </div>
     </div>
 
@@ -548,7 +674,7 @@ TESTIMONIAL — CINEMATIC GOLD VERSION
   <!-- Sticky Mobile CTA -->
   <div class="mobile-sticky-cta">
     <a href="tel:+12282247741">Call Now</a>
-    <a href="#appointment">Call About An Appointment</a>
+    <a href="#appointment">Book Appointment</a>
   </div>
 
   <!-- LeadSpark Upgrade Slot: GHL Chat Widget -->

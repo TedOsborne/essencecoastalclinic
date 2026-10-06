@@ -438,6 +438,71 @@
   <!-- =========================================================
   TESTIMONIAL — CINEMATIC GOLD VERSION
   ========================================================== -->
+  <section class="testimonial-section cinematic-testimonial">
+    <div class="testimonial-bg" aria-hidden="true"></div>
+    <div class="testimonial-overlay" aria-hidden="true"></div>
+
+    <div class="container testimonial-inner" data-reveal>
+      <div class="testimonial-kicker">
+        <span></span>
+        <p>Essence Coastal Clinic</p>
+        <span></span>
+      </div>
+
+      <div class="testimonial-panel">
+        <div class="testimonial-glow"></div>
+
+        <p class="testimonial-label">Patient Experience</p>
+
+        <h2>Patients Feel Cared For Here</h2>
+
+        <div class="testimonial-stars" aria-label="Five star patient experience">
+          ★ ★ ★ ★ ★
+        </div>
+
+        <blockquote>
+          “From the moment we walked in, the staff made us feel comfortable and cared for. The clinic was clean, professional, and the visit process was quick and easy.”
+        </blockquote>
+
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">
+            <img src="assets/img/sarah-m.png" alt="Local patient testimonial">
+          </div>
+
+          <div>
+            <strong>Sarah M.</strong>
+            <span>Local Patient</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-trust-row">
+        <div>
+          <span>♡</span>
+          <strong>Compassionate Care</strong>
+          <p>You’re in kind hands</p>
+        </div>
+
+        <div>
+          <span>◷</span>
+          <strong>Same-Day Help</strong>
+          <p>Care when time matters</p>
+        </div>
+
+        <div>
+          <span>👥</span>
+          <strong>Patient First</strong>
+          <p>Families, workers, and seniors</p>
+        </div>
+
+        <div>
+          <span>✓</span>
+          <strong>Trusted Local Clinic</strong>
+          <p>Right here in Gulfport</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- =========================================================
   SOFT TRANSITION INTO CONTACT AREA
@@ -571,10 +636,17 @@
       </div>
 
       <div>
-        <h4>Clinic Updates</h4>
-        <p>Questions about clinic updates? Please call us.</p>
+        <h4>Stay Updated</h4>
+        <p>Sign up for clinic updates and wellness reminders.</p>
 
-        <p class="static-contact-note">For clinic updates, call <a href="tel:+12282247741">228-224-7741</a>. Online signup is unavailable while this site is being updated.</p>
+        <form class="newsletter-form" action="send-essence-form.php" method="POST">
+          <input type="hidden" name="formType" value="subscription" />
+          <input type="hidden" name="source" value="Essence Coastal Clinic Website Footer Subscription" />
+          <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none;" />
+
+          <input type="email" name="subscriberEmail" placeholder="Email Address" required />
+          <button type="submit">Sign Up</button>
+        </form>
       </div>
     </div>
 

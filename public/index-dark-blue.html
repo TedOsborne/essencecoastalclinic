@@ -426,6 +426,14 @@
   <!-- =========================================================
   TESTIMONIAL
   ========================================================== -->
+  <section class="testimonial-section">
+    <div class="container" data-reveal>
+      <blockquote>
+        “From the moment we walked in, the staff made us feel comfortable and cared for. The clinic was clean, professional, and the visit process was quick and easy.”
+      </blockquote>
+      <cite>— Sarah M.</cite>
+    </div>
+  </section>
 
   <!-- =========================================================
   CONTACT
@@ -546,10 +554,17 @@
       </div>
 
       <div>
-        <h4>Clinic Updates</h4>
-        <p>Questions about clinic updates? Please call us.</p>
+        <h4>Stay Updated</h4>
+        <p>Sign up for clinic updates and wellness reminders.</p>
 
-        <p class="static-contact-note">For clinic updates, call <a href="tel:+12282247741">228-224-7741</a>. Online signup is unavailable while this site is being updated.</p>
+        <form class="newsletter-form" action="send-essence-form.php" method="POST">
+		  <input type="hidden" name="formType" value="subscription" />
+		  <input type="hidden" name="source" value="Essence Coastal Clinic Website Footer Subscription" />
+		  <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none;" />
+
+		  <input type="email" name="subscriberEmail" placeholder="Email Address" required />
+		  <button type="submit">Sign Up</button>
+		</form>
       </div>
     </div>
 
