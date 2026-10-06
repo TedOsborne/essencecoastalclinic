@@ -17,8 +17,6 @@
   const menuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
   const navItems = document.querySelectorAll(".nav-links a");
-  const clinicForm = document.getElementById("clinicForm");
-  const newsletterForm = document.querySelector(".newsletter-form");
 
   /* =========================================================
      MOBILE MENU
@@ -92,47 +90,7 @@
      - SAW PHP form handler
      - approved healthcare-safe workflow
   ========================================================= */
-  if (clinicForm) {
-    clinicForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const formData = new FormData(clinicForm);
-
-      const payload = {
-        firstName: (formData.get("firstName") || "").trim(),
-        lastName: (formData.get("lastName") || "").trim(),
-        phone: (formData.get("phone") || "").trim(),
-        email: (formData.get("email") || "").trim(),
-        service: (formData.get("service") || "").trim(),
-        message: (formData.get("message") || "").trim(),
-        source: "Essence Coastal Clinic Website",
-        pageVersion: "Blue Healthcare Version"
-      };
-
-      alert(
-        "Thank you" +
-          (payload.firstName ? ", " + payload.firstName : "") +
-          ". Your appointment request has been prepared. A clinic team member will follow up to help with scheduling."
-      );
-
-      console.info("Essence Coastal Clinic appointment request:", payload);
-
-      clinicForm.reset();
-    });
-  }
-
-  /* =========================================================
-     NEWSLETTER PLACEHOLDER
-  ========================================================= */
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      alert("Thank you. You have been added to the clinic update list.");
-
-      newsletterForm.reset();
-    });
-  }
+  // Online intake and signup are unavailable on this static preview.
 
   /* =========================================================
      LEADSPARK UPGRADE HOOKS
