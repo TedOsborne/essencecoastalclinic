@@ -20,6 +20,8 @@
   const menuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
   const navItems = document.querySelectorAll(".nav-links a");
+  const clinicForm = document.getElementById("clinicForm");
+  const newsletterForm = document.querySelector(".newsletter-form");
   const revealItems = document.querySelectorAll("[data-reveal]");
 
   /* =========================================================
@@ -129,7 +131,48 @@
      This keeps the static website functional-looking until
      the LeadSpark / GHL form or webhook is connected.
   ========================================================= */
-  // Online intake and signup are unavailable on this static preview.
+  if (clinicForm) {
+    clinicForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(clinicForm);
+
+      const payload = {
+        firstName: (formData.get("firstName") || "").trim(),
+        lastName: (formData.get("lastName") || "").trim(),
+        phone: (formData.get("phone") || "").trim(),
+        email: (formData.get("email") || "").trim(),
+        service: (formData.get("service") || "").trim(),
+        preferredContact: (formData.get("preferredContact") || "").trim(),
+        message: (formData.get("message") || "").trim(),
+        source: formData.get("source") || "Essence Coastal Clinic Website",
+        pageVersion: formData.get("pageVersion") || "Golden Luxury Landing Page"
+      };
+
+      alert(
+        "Thank you" +
+          (payload.firstName ? ", " + payload.firstName : "") +
+          ". Your appointment request has been prepared. A clinic team member will follow up to help with scheduling."
+      );
+
+      console.info("Essence Coastal Clinic appointment request:", payload);
+
+      clinicForm.reset();
+    });
+  }
+
+  /* =========================================================
+     NEWSLETTER PLACEHOLDER
+  ========================================================= */
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      alert("Thank you. You have been added to the clinic update list.");
+
+      newsletterForm.reset();
+    });
+  }
 
   /* =========================================================
      LEADSPARK UPGRADE HOOKS

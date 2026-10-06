@@ -17,6 +17,8 @@
   const menuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
   const navItems = document.querySelectorAll(".nav-links a");
+  const clinicForm = document.getElementById("clinicForm");
+  const newsletterForm = document.querySelector(".newsletter-form");
 
   /* =========================================================
      MOBILE MENU
@@ -76,7 +78,45 @@
      - SAW PHP form handler
      - HIPAA-safe approved form workflow if needed
   ========================================================= */
-  // Online intake and signup are unavailable on this static preview.
+  if (clinicForm) {
+    clinicForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(clinicForm);
+      const firstName = (formData.get("firstName") || "").trim();
+      const service = (formData.get("service") || "").trim();
+
+      alert(
+        "Thank you" +
+          (firstName ? ", " + firstName : "") +
+          ". Your appointment request has been prepared. A clinic team member will follow up to help with scheduling."
+      );
+
+      console.info("Essence Coastal Clinic appointment request:", {
+        firstName: formData.get("firstName"),
+        lastName: formData.get("lastName"),
+        phone: formData.get("phone"),
+        email: formData.get("email"),
+        service: service,
+        message: formData.get("message")
+      });
+
+      clinicForm.reset();
+    });
+  }
+
+  /* =========================================================
+     NEWSLETTER PLACEHOLDER
+  ========================================================= */
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      alert("Thank you. You have been added to the clinic update list.");
+
+      newsletterForm.reset();
+    });
+  }
 
   /* =========================================================
      LEADSPARK UPGRADE HOOKS
